@@ -1,12 +1,14 @@
 const express = require('express');
 
 app = express();
+app.use(express.json()) // t
 
 
  const HOST = 'localhost';
  const PORT = 8080;
 
  const contactsRoutes = require('./routes/contacts');
+
 
  app.use(contactsRoutes);
 
