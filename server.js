@@ -4,6 +4,12 @@ app = express();
 app.use(express.json()) // t
 
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger-output.json');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
+
  const HOST = 'localhost';
  const PORT = 8080;
 

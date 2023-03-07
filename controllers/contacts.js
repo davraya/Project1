@@ -45,7 +45,7 @@ const updateContact = async (req, res) => {
     const client = await mongodb.getDb();
     const response  = await client.db('people').collection('myContacts').replaceOne({ _id: userId }, contact);
     if (response.acknowledged) {
-        res.status(204).josn(response);  // not sending a status back
+        res.status(204).json(response);  // not sending a status back
     } else {
         res.status(500).json(response.error || 'Some error occurred while updating the contact.');
       }
